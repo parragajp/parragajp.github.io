@@ -32,6 +32,7 @@ body{
   }
   
   .home-paragraph-3{
+  
     text-align: center;
     margin-top: -50px;
   }
@@ -85,12 +86,14 @@ body{
   }
   
   .home-headline-2{
+    font-family: 'Nova Flat';
     grid-column: 3/6;
     grid-row: 4/5;
     margin-top: -5px;
   }
   
   .home-paragraph-2{
+    font-family: 'Actor';
     grid-column: 4/6;
     grid-row: 5/7;
   }
