@@ -63,6 +63,7 @@ body{
   }
   
   .home-headline-1{
+    font-family: 'Dekko';
     grid-column: 1/4;
     grid-row: 1/2;
     margin-top: 50px;
@@ -70,6 +71,7 @@ body{
   }
   
   .home-paragraph-1{
+    font-family: 'Kalam';
     grid-column: 2/4;
     grid-row: 2/4;
     margin-top: 25px;
