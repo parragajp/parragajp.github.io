@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang= "en">
+
+<head>
+  
+  <link rel="shortcut icon" href="https://cdn.glitch.com/21a1ba89-7b64-4909-8d03-d256b98529a2%2FWhitewater%20Rafting%20Vacations.png?v=1602749290209" type="image/x-icon">
+  <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Kalam' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Nova Flat' rel='stylesheet'>
+
+    <title>My Blog | Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="myblog.css">
+</head>
+
+<body>
+  <div id="content">
+    
+    <header>
+        <div class="logo-box">
+          <a href="myblog.html"> <img src="images/myemojipic.png" alt="Emoji Pic" width="200" height="200"> </a>
+          </div>
+      
+      <nav>
+            <ul>
+                <li><a href="myblog.html">Home</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
+                <li><a href="#">ML API</a></li>
+              <li><a href="#">My Website</a></li>-->
+            </ul>
+        </nav>
+    </header>
+  
+  <main>
+    
+    <!--Image resources here on this link = "https://byui-cit.github.io/wdd130/resources/dryoarimages.html"-->
+    
+    <!--Website wireframe link here = "https://byui-cit.github.io/wdd130/images/wireframe-grid-boxes.png"-->
+    
+    
+    <div class="banner-box">
+        <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fstudiopixel.in%2Fwp-content%2Fuploads%2F2017%2F11%2Fsenior-front-end-developer-openings-1.gif&f=1&nofb=1" height="350">
+      
+    </div>
+    
+    
+    <div class="home-grid">
+      <h2 class="home-headline-1">
+        Welcome!
+      </h2>
+      <p class="home-paragraph-1">
+        Hi everyone, this will be my Data Science blog. It will be all about how I'm applying my Data Science skills at work. I'm also going
+        to be sharing what I've been learning.     
+      </p>
+      <p></p>
+      <img class="home-right-img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.hi2Sa0_c1GQAeGcoxDv4-QAAAA%26pid%3DApi&f=1" alt="computer analytics">
+
+    </div>
+    
+    <section class="home-paragraph-3">
+      <h2 class="home-headline-3">
+        Senior Project
+      </h2>
+      <p>
+        For my job and for the senior project I was tasked with creating a Machine Learning API. It's a simple API service that
+        let's you send a new instance of job information against my random forest model built in scikit-learn. You could either enter the
+        job information through the GUI or through a url request.
+      </p>
+      <h3>Example of URL Request</h3>
+
+      <li>
+        <em>http://localhost:1001/predict?markup=.2&type_NotFromClustGroup=1&type_76000_plus=1&type_Referral=1</em>
+    </li>
+    <h3>API GUI</h3>
+    
+        <li><img src="images/predictpageMLAPI.png" alt="image for page" height="200"></li>
+        <li><img src="images/resultspageMLAPI.png" alt="image for page" height="200"></li>
+
+    <h2>How the API Service was Accomplished</h2>
+
+    <p>
+        I made the API service with Python's Flask Library. The nice thing about Python is that it's a Web tool and also
+        a data science tool. I need to make it aware that I didn't build this service from scratch. A recent graduate from
+        Brigham Young University - Idaho, Brandon Jenkins, built an API Service predicting whether a house was built before 1980.
+        I studied his code and I built my own API service. I'm not a natural web developer so I need help. I'm thankful that there are
+        people that came before me and figured it out. 
+    </p>
+
+    <h3>Python Code</h3>
+    <p>
+        So I think first we need address that even though the API service is built in python you still had to write in HTML & CSS code.
+        You need a templates folder that has HTML pages that python can refer to.
+    </p>
+    <h4>Example</h4>
+    <p>
+        <ul>
+            <li><img src="images/rendertemplatepython.png" alt="image for page" height="100"></li>
+        </ul>
+    </p>
+
+
+
+
+    </section>
+
+
+  <footer>
+    <p>
+      &copy; JP Parraga
+    </p>
+    
+    <div class="social">
+      
+      <a target="_blank" href="https://github.com/parragajp/JPthehulk"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" height="80"></a>
+      
+      <a target="_blank" href="https://www.linkedin.com/in/j-p-parraga-7a96a6151/"><img src="https://cdn.pixabay.com/photo/2017/08/22/11/56/linked-in-2668696_960_720.png" alt="LinkedIn" height="80"></a>
+
+    </div>
+  </footer>
+
+</main>
+
+</div>
+<a href="#content" class="top">
+  <img src="https://www.twik.io/wp-content/uploads/2019/08/scroll-to-top-1.jpg" alt="scroll to the top" height="80"></a>
+  
+</body>
+
+</html>
+  
