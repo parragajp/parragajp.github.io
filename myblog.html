@@ -78,6 +78,25 @@
         <li><img src="images/predictpageMLAPI.png" alt="image for page" height="200"></li>
         <li><img src="images/resultspageMLAPI.png" alt="image for page" height="200"></li>
 
+    <h2>Why are APIs needed?</h2>
+    <p>
+      First, you might ask yourself, "What is an API?" API stands for an application programming interface, or an interface that gives you the ability
+      to interact between software programs that you may be using. For example, at my job my boss tells me to do one thing related to data science and my
+      boss will tell another thing to a software developer related to web stuff. Both the software developer and I have to create apps (software) for
+      different reasons but in this case an API is a way for the software developer's apps to integrate with my apps.
+    </p>
+    <p></p>
+    <P>
+      So, hopefully now you understand what is an API now let's talk about why it's important. An API starts becoming important when companies,
+      individuals, or organizations need a certain but <strong>many</strong> software's to help run their business. The company probably needs 
+      an API for the accounting department, one for the project managers, one for IT department etc. The need to tie these API's together is becoming
+      increasingly important. So, in my case for the company I work for, the software developer created this web service that allows sales representatives
+      to enter job information to produce an estimate/bid for customers that need a roof replacement or install. For almost about a year I've been working on a predictive
+      model that can predict whether a customer is going to sign a contract or not. By entering job information I can tell the sales representatives if that customer
+      is going to want to sign a contract with the company to install or replace their roof. So, how do you integrate the software developer's app with my predictive
+      model? Through an API.
+    </P>
+
     <h2>How the API Service was Accomplished</h2>
 
     <p>
@@ -87,6 +106,10 @@
         I studied his code and I built my own API service. I'm not a natural web developer so I need help. I'm thankful that there are
         people that came before me and figured it out. 
     </p>
+
+    <p></p>
+
+    <p>Let's look at some code</p>
 
     <h3>Python Code</h3>
     <p>
@@ -99,6 +122,51 @@
             <li><img src="images/rendertemplatepython.png" alt="image for page" height="100"></li>
         </ul>
     </p>
+    <p>
+      The python code starts out with creating a decorator. A decorator is whenever you have a function and you see an @ symbol at the starting.
+      Basically, a decorator takes a function and adds some functionality and returns it. So, for this example the function needs to return the
+      "isAlive.html" file but the app needs to route or map the URL. In other words we are connecting the URL to the function.
+    </p>
+
+    <h3>My API Code</h3>
+
+    <h4>API through URL</h4>
+    <p>
+      <ul>
+          <li><img src="images/loadmodel.png" alt="image for page" height="100" width="450"></li>
+      </ul>
+
+      <ul>
+        So the first thing that we have to do is load the model. In your .py file (you can name it anything you'd like) you can create any model that you like and call
+        the python library 'joblib' to save your model.
+      </ul>
+
+      <ul>
+        <li><img src="images/createfunction.png" alt="image for page" height="100"></li>
+    </ul>
+
+    <ul>
+      The next thing to do is create a function that will take in 'request parameters' (job information) and create objects out of them.
+    </ul>
+
+    <ul>
+      <li><img src="images/createnewinstance.png" alt="image for page" height="100" width="450"></li>
+  </ul>
+   <ul>
+     Pass those objects (parameters) into a numpy array.
+   </ul>
+
+   <ul>
+    <li><img src="images/returnprediction.png" alt="image for page" height="100"></li>
+</ul>
+
+<ul>
+  Then you want to return that new prediction on that new instance.
+</ul>
+
+
+  </p>
+
 
 
 
