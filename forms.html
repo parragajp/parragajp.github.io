@@ -16,48 +16,60 @@
           <link rel="stylesheet" href="forms.css">
       </head>
 
+    <body>
       <div id="feedback"></div>
-
-      <script>
-        // get the feedback div element so we can do something with it.
-        const feedbackElement = document.getElementById('feedback');
-        // get the form so we can read what was entered in it.
-        const formElement = document.forms[0];
-        // add a 'listener' to wait for a submission of our form. When that happens run the code below.
-        formElement.addEventListener('submit', function(e) {
-            // stop the form from doing the default action
-            e.preventDefault();
-            // set the contents of our feedback element to a message letting the user know the form was submitted successfully. Notice that we pull the name that was entered in the form to personalize the message!
-            feedbackElement.innerHTML = 'Hello '+ formElement.name.value +'! Thank you for your message. We will get back with you as soon as possible!';
-            // make the feedback element visible.
-            feedbackElement.style.display = "block";
-            // add a class to move everything down so our message doesn't cover it.
-            document.body.classList.toggle('moveDown');
-        });
-    </script>
-
-    <form action="/my-handling-form-page" method="post">
+      <form action="/my-handling-form-page" method="post">
         <ul>
-         <li>
-           <label for="name">Name:</label>
-           <input type="text" id="name" name="user_name">
-         </li>
-         <li>
-           <label for="mail">E-mail:</label>
-           <input type="email" id="mail" name="user_email">
-         </li>
-         <li>
-           <label for="msg">Message:</label>
-           <textarea id="msg" name="user_message"></textarea>
-         </li>
-
-         <li class="button">
-            <button type="submit">Send your message</button>
+          <li>
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="user_name"
+              placeholder="Enter your name here"
+            />
+          </li>
+  
+          <li>
+            <label for="mail">E-mail:</label>
+            <input
+              type="email"
+              id="mail"
+              name="user_email"
+              placeholder="Enter your email here"
+            />
+          </li>
+          <li>
+            <label for="msg">Message:</label>
+            <textarea
+              id="msg"
+              name="user_message"
+              placeholder="Type your message here"
+            ></textarea>
+          </li>
+  
+          <li class="button">
+            <button type="submit">
+              Submit your message
+            </button>
           </li>
         </ul>
-
-    
-       </form>
+      </form>
+  
+      <script>
+        const feedbackElement = document.getElementById("feedback");
+        const formElement = document.forms[0];
+        formElement.addEventListener("submit", function(e) {
+          e.preventDefault();
+          feedbackElement.innerHTML =
+            "Hello " +
+            formElement.user_name.value +
+            "! Thank you for your message. Talk to you as soon as possible!";
+          feedbackElement.style.display = "block";
+          document.body.classList.toggle("moveDown");
+        });
+      </script>
+    </body>
 
 
 
