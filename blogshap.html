@@ -31,11 +31,11 @@
       </p>
 
       <p>
-          That's alot to take in right? In plain words SHAP helps us and in my case helped me
+          That's a lot to take in right? In plain words SHAP helps us and in my case helped me
           interpret my machine learning model with Shapley values. I want to take the time to show you how I used SHAP to explain my model.
           If you want to go more in depth about Game Theory & Shapley I suggest visiting 
           <a href="https://www.analyticsvidhya.com/blog/2019/11/shapley-value-machine-learning-interpretability-game-theory/" target="_blank">Analytics Vidhya</a>
-          I'm just going to give a high overview on how to use this library.
+          I'm just going to give a high overview on how to use this library. Then I'll explain shap values briefly.
       </p>
 
       <img src="images/orderbysimilarity.png" alt="example of shapley">
@@ -77,9 +77,144 @@
             );
         };
     </script>
+
+    <p>
+      The next step is is to explain the model's prediction using shap.
+    </p>
     
+    <pre><code id="shapvaluesandexplain">
+
+      import shap
+
+      explainer = shap.TreeExplainer(rf, data = X_train, model_output = 'probability')
+      shap_values = explainer.shap_values(X_train)
 
 
+
+    </code></pre>
+    <script type="text/javascript">
+      window.onload = function(){
+          var codeElement = document.getElementById('shapvaluesandexplain');
+          // Add code mirror class for coloring (default is the theme)
+          codeElement.classList.add( 'cm-s-default' );
+          var code = codeElement.innerText;
+
+          codeElement.innerHTML = "";
+
+          CodeMirror.runMode(
+            code,
+            'python',
+            codeElement
+          );
+      };
+  </script>
+
+  <p>
+    If we want to summarize the effects of some of the featues we can run this code:
+  </p>
+
+  <pre><code id="sumeffects">
+
+    shap.summary_plot(shap_values[1], X_train)
+
+
+
+  </code></pre>
+  <script type="text/javascript">
+    window.onload = function(){
+        var codeElement = document.getElementById('sumeffects');
+        // Add code mirror class for coloring (default is the theme)
+        codeElement.classList.add( 'cm-s-default' );
+        var code = codeElement.innerText;
+
+        codeElement.innerHTML = "";
+
+        CodeMirror.runMode(
+          code,
+          'python',
+          codeElement
+        );
+    };
+</script>
+
+<p>
+  That code will produce this image:
+</p>
+
+<img src="images/shapsummary.png" alt="shap summary">
+<p>
+
+  This is how I would read that summary plot.
+  The x-axis represents the feature's shap value and its impact on the target variable. It can either be positive or negative. Red means that there is
+  a positive impact and that it's increasing the value of the target variable. The y-axis lists the model's features ordered by descending importance.
+</p>
+
+<p>
+  Another cool plot that shap can create is a 'Force Plot.' A force plot you can view a prediction's explanation horizontally.
+  It can show how each feature is contributing and pushing the target's variable output.
+</p>
+
+
+<pre><code id="forceplotex">
+
+  # The first prediction's explanation
+  shap.force_plot(explainer.expected_value[0], shap_values[0][0], X_train.iloc[0, :], link='logit')
+
+</code></pre>
+<script type="text/javascript">
+  window.onload = function(){
+      var codeElement = document.getElementById('forceplotex');
+      // Add code mirror class for coloring (default is the theme)
+      codeElement.classList.add( 'cm-s-default' );
+      var code = codeElement.innerText;
+
+      codeElement.innerHTML = "";
+
+      CodeMirror.runMode(
+        code,
+        'python',
+        codeElement
+      );
+  };
+</script>
+
+<img src="images/forceplotexample.png" alt="force plot example">
+
+<p>
+
+I used these plots to explain to my boss how each of the features are affecting the probability of winning or losing. Each prediction is unique so it's 
+nice to see how each feature is affecting the probability in that specific instance.
+
+</p>
+
+
+<h2>Shap Values</h2>
+<p>
+
+Let's talk about shap values now. You've already seen how to run the code and produce two set's of plots now I'm going to try and explain what shap values are.
+
+</p>
+
+<p>
+
+In simple words shap values are a measurment of the impact of a feature taking into consideration with or without the interaction of all the other features.
+</p>
+
+<p>
+  The math is quite complicated I would say but let's reaiterate what I've just said: The shap value is the impact of the feature to the target variable. Thankfully someone
+  has come before us to code all the math so on the backend the equation is calculating the difference of the predictions with and with out the feature and with and without the
+  interactions of the other features.
+</p>
+
+<h2>Conclusion</h2>
+
+<p>
+
+I'm not an expert in game theory, programming, or shap values but I am thankful for people who have put in the time to make amazing tools so that the rest 
+of use can enjoy them. I feel like in R packages and Python Libraries we focus a lot on the numbers and SHAP provides a nice way of visualizing the results.
+Thank you for reading this post of mine!
+
+</p>
 
     </main>
   </body>
