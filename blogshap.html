@@ -3,9 +3,12 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Site Plan</title>
+    <title>JP Blog-SHAP</title>
     <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+    <link rel="stylesheet" href="//codemirror.net/lib/codemirror.css">
+    <script src="//codemirror.net/addon/runmode/runmode-standalone.js"></script>
+    <script src="//codemirror.net/mode/python/python.js"></script>
     <link type="text/css" rel="stylesheet" href="personalsite.css">
   </head>
 
@@ -20,7 +23,7 @@
       <hr>
       <h3>Purpose</h3>
       <p>
-          I would like to take some time talking about SHAP. For my senior project and for work I've had to use python's library shap to explain
+          I want to talk about SHAP. For my senior project/work I've had to use python's library shap to explain
           my random forest model. According to the creators of SHAP stands for
           SHapley Additive exPlanations. SHAP is a game-theoretic approach to explain the output of any machine learning model.
           It connects optimal credit allocation with local explanations using the classic Shapley values from game theory and
@@ -28,7 +31,7 @@
       </p>
 
       <p>
-          When I read that it was a lot to take in but in plain words SHAP helps us and in my case helped me
+          That's alot to take in right? In plain words SHAP helps us and in my case helped me
           interpret my machine learning model with Shapley values. I want to take the time to show you how I used SHAP to explain my model.
           If you want to go more in depth about Game Theory & Shapley I suggest visiting 
           <a href="https://www.analyticsvidhya.com/blog/2019/11/shapley-value-machine-learning-interpretability-game-theory/" target="_blank">Analytics Vidhya</a>
@@ -43,6 +46,37 @@
       <p>
           Here I'm going to share an example of how to use SHAP.
       </p>
+
+      <p>
+        I used a Random Forest Classifier to predict the probablity of winning a job. So the first step is to create an instance of this model
+        from sklearn's 'sklearn.ensemble' library and train it.
+      </p>
+      
+      <pre><code id="rf_code">
+
+        from sklearn.ensemble import RandomForestClassifier
+
+        rf = RandomForestClassifier()
+
+        rf.fit(X_train, y_train)
+
+      </code></pre>
+      <script type="text/javascript">
+        window.onload = function(){
+            var codeElement = document.getElementById('rf_code');
+            // Add code mirror class for coloring (default is the theme)
+            codeElement.classList.add( 'cm-s-default' );
+            var code = codeElement.innerText;
+
+            codeElement.innerHTML = "";
+
+            CodeMirror.runMode(
+              code,
+              'python',
+              codeElement
+            );
+        };
+    </script>
     
 
 
