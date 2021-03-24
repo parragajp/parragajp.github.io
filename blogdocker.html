@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <title>JP Blog-Docker</title>
+    <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+    <link rel="stylesheet" href="//codemirror.net/lib/codemirror.css">
+    <script src="//codemirror.net/addon/runmode/runmode-standalone.js"></script>
+    <script src="//codemirror.net/mode/python/python.js"></script>
+    <link type="text/css" rel="stylesheet" href="blogdocker.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>JP Parraga Blog Post #3</h1>
+      <h2>Docker</h2>
+    </header>
+    <main>
+
+      <h2>Purpose</h2>
+      <hr>
+      <h3>How I used Docker to host a Microsoft SQL Database</h3>
+
+      <div class="row">
+          <div class="column">
+              <img src="images/dockerpic.png" alt="docker pic" style="width:100%">
+          </div>
+          <div class="column">
+              <img src="images/mssqlmspic.png" alt="sql managment studio desktop icon" style="width:100%">
+          </div>
+          <div class="column">
+              <img src="images/gcloudpic.jpeg" alt="gcloud pic" style="width:100%">
+          </div>
+      </div>
+
+
+      <p>
+          I want to preface that Docker is a great tool and it serves many purposes. In this blog post I want to explain
+          how I was able to host a SQL Server Database through <a href="https://www.docker.com/" target="_blank">Docker</a> and 
+          <a href="https://cloud.google.com/" target="_blank">Google's Cloud Platform.</a> I will talk about my thoughts about each of
+          these tools and then I'll go a little more in depth of what exactly each tool is and then I'll summarize the steps I took
+          to deploy MSSQL Database using both tools.
+      </p>
+
+
+      <h3>Thoughts on GCloud</h3>
+      <p>
+          One thing that I have come to learn while doing school and work that nothing is free in this world. It's a difficult
+          truth that I've come to accept. Sometimes it's okay to pay money for something that you just don't have the expertise to do.
+          This is where Google Cloud Platform comes into play. Google Cloud Platform solves many obstacles. I think GCloud modernizes
+          cloud infrastructure and runs important things like VMware, Oracle, MSSQL, and Operating Systems. With Databases it can manage
+          data while being secure and reliable.
+      </p>
+
+      <h3>Thoughts on Docker</h3>
+      <p>
+        I'm very new to software development and it's something that is not easy for me. However,
+        I get really excited when software development is stress free and you know what is stress free? Docker!
+        Like their website says, "Docker delivers applications <strong>hassle free</strong> and helps devlopers conquer the complexity
+        of app development. We <strong>simplify</strong> and <strong>accelerate</strong> workflows." I love this.
+      </p>
+
+      <h2>What is Docker?</h2>
+
+      <p>
+          Docker is a software platform that makes easy the building, running, maintaining, and transfering of applications. Docker
+          does this by virtualizing an operating system of the computer you are using.
+      </p>
+
+      <h3>How does Docker solve the software process?</h3>
+
+      <p>
+          Take for example python. If your company has 3 python developers and they're using 3 different versions of Python and you want to deploy their
+          apps how do you host all 3 apps on the same server? Keep in mind that each app has different dependencies because they probably use different
+          computers/operating systems and different python editors. The solution is Docker! What your company could do is save these apps into containers which
+          copies the dependencies and the operating system and virtualizes them. Basically your host could share these containers all in the same place.
+      </p>
+      <p>
+          A cool thing is that Docker can run in any operating system. You can pass different docker containers to different computers and it doesn't
+          matter what computer you are using.
+      </p>
+
+      <h3>My Docker Container</h3>
+
+      <p>
+          In my case I created a Microsoft SQL Instance in Docker. I can remotely connect to it and create tables, query the data,
+          and create as many databases as I want. I can save this SQL instance and put it into a container and move it around. Now,
+          I'm just thinking ahead here. I developed a Database in the first place because at my work we're switching databases and we 
+          need a better way to retrieve data because the old database is a non-relational database and SQL databases are relational so it's
+          easier to retrieve information. I first developed the instance on docker and I can change the instance by remotely connecting into. I can
+          save it and transfer it to wherever I like. When I leave the company that docker SQL instance can be saved and moved around as many times
+          it needs to be and in the future in won't matter if you're on Mac or Windows to remotely connect to it. If for example I developed a database
+          but it was developed in Windows obviously because it's made by Microsoft, you could technically save the database into a .bak file but that database
+          could only be restored through someone that has a windows pc and if they had Microsoft's management studio. The other thing is that database could only
+          be hosted throught Microsoft's cloud services but what if the company I work for doesn't use any stuff like that? In making the SQL instance 
+          with docker, this docker container can be moved anywhere, on any computer, on any hosting services, and on any application platform. Docker makes things
+          versatile, easy, and flexible.
+      </p>
+
+      <h2>What is GCloud?</h2>
+
+    </main>
+  </body>
+
+</html>
